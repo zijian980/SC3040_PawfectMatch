@@ -33,7 +33,7 @@
 ## 📂 Folder Structure
 
 ```
-3040-TEL2-KK/
+SC3040-PAWFECTMATCH/
 │── app/                     # Source code (frontend & backend)
 │
 ├── Backlog/                 # Backlog artefacts
@@ -48,8 +48,8 @@
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/softwarelab3/3040-TEL2-KK.git
-   cd 3040-TEL2-KK/app
+   git clone https://github.com/zijian980/SC3040_PawfectMatch.git
+   cd SC3040-PAWFECTMATCH/app
    ```
 
 1. Complete [Backend Setup](./app/backend/README.md#️-setup)
