@@ -1,0 +1,368 @@
+.paymentPage {
+  min-height: 100vh;
+  padding: 2.5rem clamp(1.75rem, 3vw + 1rem, 3.5rem) 3.5rem;
+  background: linear-gradient(135deg, #7aa8ff 0%, #7351ff 45%, #f9c77e 100%);
+  font-family:
+    "Inter",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.paymentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: #fff;
+}
+
+.backButton {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.backButton:hover {
+  transform: translateY(-2px);
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.backButton:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+.paymentMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: #fff;
+}
+
+.paymentStep {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.paymentTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.paymentBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.18);
+  color: #fff;
+  font-size: 0.95rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.paymentBadge svg {
+  width: 20px;
+  height: 20px;
+}
+
+.paymentLayout {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(280px, 1.4fr);
+  gap: 1.8rem;
+}
+
+.paymentCard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 2.3rem clamp(1.8rem, 2vw + 1.2rem, 2.7rem);
+  box-shadow: 0 32px 60px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  color: #0f172a;
+}
+
+.paymentPage--empty {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.paymentPage--empty .paymentCard {
+  max-width: 420px;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cardHeader h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.cardHeader p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4a5672;
+}
+
+.summaryList {
+  display: grid;
+  gap: 1rem;
+}
+
+.summaryItem {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: #f4f7ff;
+  color: #1a2542;
+}
+
+.summaryItem svg {
+  width: 22px;
+  height: 22px;
+  color: #4c5cff;
+}
+
+.summaryItem span:first-of-type {
+  font-weight: 600;
+}
+
+.summarySub {
+  display: block;
+  font-size: 0.85rem;
+  color: #607098;
+  margin-top: 0.2rem;
+}
+
+.summaryTotals {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.summaryTotals div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.summaryTotals dt {
+  font-weight: 600;
+  color: #1a2542;
+}
+
+.summaryTotals dd {
+  margin: 0;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.summaryTotalRow {
+  margin-top: 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(23, 37, 84, 0.1);
+}
+
+.paymentSupport {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.95rem 1.05rem;
+  border-radius: 18px;
+  background: rgba(76, 92, 255, 0.1);
+  color: #1a2542;
+}
+
+.paymentSupport svg {
+  width: 22px;
+  height: 22px;
+  color: #4c5cff;
+}
+
+.formCard {
+  gap: 1.5rem;
+}
+
+.methodHighlight {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 18px;
+  background: #f4f7ff;
+  color: #1a2542;
+}
+
+.methodHighlight svg {
+  width: 22px;
+  height: 22px;
+  color: #4c5cff;
+}
+
+.methodHighlight span:first-of-type {
+  font-weight: 600;
+}
+
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+  color: #1a2542;
+  font-weight: 600;
+}
+
+.formField input {
+  border-radius: 14px;
+  border: 1px solid rgba(23, 37, 84, 0.14);
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #0f172a;
+  background: #fff;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.formField input:focus {
+  outline: none;
+  border-color: rgba(76, 92, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(76, 92, 255, 0.22);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.appliedPromo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(76, 92, 255, 0.12);
+  color: #1c2460;
+  font-size: 0.9rem;
+}
+
+.appliedPromo svg {
+  width: 18px;
+  height: 18px;
+}
+
+.paymentButton {
+  border: none;
+  border-radius: 16px;
+  padding: 0.85rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(120deg, #4c5cff 0%, #735cff 60%, #ff7ec3 100%);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 18px 36px rgba(76, 92, 255, 0.25);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.paymentButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(76, 92, 255, 0.3);
+}
+
+.paymentButton:focus-visible {
+  outline: 3px solid rgba(76, 92, 255, 0.45);
+  outline-offset: 3px;
+}
+
+.successBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.05rem;
+  border-radius: 18px;
+  background: rgba(30, 193, 149, 0.12);
+  color: #0f4e3b;
+}
+
+.successBanner svg {
+  width: 22px;
+  height: 22px;
+  color: #1ec195;
+}
+
+@media (max-width: 1024px) {
+  .paymentLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .paymentCard {
+    padding: 2rem clamp(1.4rem, 4vw, 2.4rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .paymentPage {
+    padding: 2rem 1.5rem 2.5rem;
+  }
+
+  .paymentHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .paymentBadge {
+    align-self: flex-start;
+  }
+
+  .paymentCard {
+    border-radius: 20px;
+  }
+}

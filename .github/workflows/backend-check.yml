@@ -1,0 +1,73 @@
+name: Backend check
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'app/backend/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/backend/**'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/backend
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: set up python env
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.7'
+
+      - name: cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashfiles('**/requirements-runtime.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: install dependencies
+        run: |
+          pip install -r requirements-dev.txt
+          pip install -r requirements-runtime.txt
+
+      - name: run black, ruff, mypy
+        run: make check
+  UTests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/backend
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: set up python env
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.7'
+
+      - name: cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashfiles('**/requirements-runtime.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: install dependencies
+        run: |
+          pip install -r requirements-dev.txt
+          pip install -r requirements-runtime.txt
+
+      - name: run unit tests
+        run: |
+          export GOOGLE_CLIENT_ID=""
+          export GOOGLE_CLIENT_SECRET=""
+          PYTHONPATH=$(pwd) pytest

@@ -1,0 +1,21 @@
+name: PawfectMatch
+
+services:
+  db:
+    image: postgres:17.6
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: P@ssw0rd123!
+      POSTGRES_DB: pawfectmatch
+    ports:
+      - 5435:5432
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge

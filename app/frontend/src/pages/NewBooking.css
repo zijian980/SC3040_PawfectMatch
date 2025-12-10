@@ -1,0 +1,590 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+}
+
+.bookingPage {
+  min-height: 100vh;
+  padding: 2.5rem 3rem 3.5rem;
+  background: linear-gradient(130deg, #64b5ff 0%, #8f74ff 40%, #f9c77e 100%);
+  font-family:
+    "Inter",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.bookingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+  color: #ffffff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.brandTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.brandSubtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.iconCircle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.iconCircle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.backButton {
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.backButton:hover {
+  transform: translateY(-1px);
+  background: rgba(15, 23, 42, 0.28);
+}
+
+.backButton:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+.navIcons {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  color: #fff;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  line-height: 1;
+}
+
+.badgeVersion {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.badgeIcon,
+.badgeVersion svg {
+  width: 18px;
+  height: 18px;
+}
+
+.badgeLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.iconButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+  cursor: pointer;
+}
+
+.iconButton:hover {
+  transform: translateY(-1px);
+  background: rgba(15, 23, 42, 0.28);
+}
+
+.iconButton:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+.iconButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.profileButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f172a;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+}
+
+.profileButton:hover {
+  transform: translateY(-1px);
+}
+
+.profileButton:focus-visible {
+  outline: 3px solid rgba(15, 23, 42, 0.35);
+}
+
+.bookingLayout {
+  max-width: 1220px;
+  width: 100%;
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 360px);
+  gap: 1.75rem;
+}
+
+.mainColumn {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+  padding: 2.2rem clamp(1.8rem, 2vw + 1.4rem, 2.8rem);
+  box-shadow: 0 32px 64px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.panelHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.panelHeader h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #101b33;
+}
+
+.panelHeader p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4a5672;
+}
+
+.serviceOptions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem;
+}
+
+.serviceOption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.3rem 1.4rem;
+  border-radius: 20px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #f6f8fc;
+  color: #16223f;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    transform 140ms ease;
+}
+
+.serviceOption:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px rgba(15, 23, 42, 0.12);
+}
+
+.serviceOption.isActive {
+  border-color: rgba(90, 118, 255, 0.45);
+  background: #ecf1ff;
+  box-shadow: 0 24px 48px rgba(71, 101, 255, 0.22);
+}
+
+.serviceOptionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+}
+
+.servicePrice {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.serviceDescription {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4a5672;
+  min-height: 2.2rem;
+}
+
+.serviceDuration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: #4a5672;
+}
+
+.scheduleSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.dateField,
+.timeField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: #192542;
+  font-weight: 600;
+}
+
+.dateField input {
+  border-radius: 16px;
+  border: 1px solid rgba(21, 34, 60, 0.14);
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #101b33;
+  background: #ffffff;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.dateField input:focus {
+  outline: none;
+  border-color: rgba(90, 118, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(90, 118, 255, 0.2);
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 0.65rem;
+}
+
+.timeCell {
+  border-radius: 14px;
+  border: 1px solid rgba(21, 34, 60, 0.14);
+  padding: 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: #101b33;
+  cursor: pointer;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    transform 140ms ease;
+}
+
+.timeCell:hover {
+  transform: translateY(-1px);
+  border-color: rgba(90, 118, 255, 0.4);
+}
+
+.timeCell.isSelected {
+  background: rgba(90, 118, 255, 0.12);
+  border-color: rgba(90, 118, 255, 0.65);
+  color: #4155ff;
+  box-shadow: 0 18px 32px rgba(90, 118, 255, 0.18);
+}
+
+.summaryColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryCard {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 28px;
+  padding: 2.2rem 2.1rem;
+  box-shadow: 0 32px 64px rgba(15, 23, 42, 0.2);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  color: #101b33;
+}
+
+.summaryBlock {
+  display: grid;
+  gap: 1rem;
+}
+
+.summaryLine {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 18px;
+  background: #f6f8fc;
+  color: #192542;
+}
+
+.summaryLine span:first-of-type {
+  font-weight: 600;
+}
+
+.summarySub {
+  display: block;
+  font-size: 0.85rem;
+  color: #617093;
+}
+
+.totals {
+  display: grid;
+  gap: 0.9rem;
+  font-size: 0.95rem;
+}
+
+.totals div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.totals dt {
+  margin: 0;
+  font-weight: 500;
+  color: #4a5672;
+}
+
+.totals dd {
+  margin: 0;
+  font-weight: 600;
+  color: #101b33;
+}
+
+.promoRow {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.promoInput {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 16px;
+  border: 1px dashed rgba(21, 34, 60, 0.18);
+  background: #ffffff;
+}
+
+.promoInput input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+  flex: 1;
+  color: #101b33;
+}
+
+.summaryButton {
+  border: none;
+  border-radius: 18px;
+  padding: 0.85rem 1.4rem;
+  background: linear-gradient(135deg, #5a76ff, #8a64ff);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 24px 44px rgba(90, 118, 255, 0.3);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.summaryButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.summaryButton:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 26px 48px rgba(90, 118, 255, 0.36);
+}
+
+@media (max-width: 1080px) {
+  .bookingLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .summaryColumn {
+    order: -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .bookingPage {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .heroBranding {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .bookingLayout {
+    gap: 1.4rem;
+  }
+
+  .panel {
+    padding: 1.8rem 1.5rem;
+  }
+
+  .summaryCard {
+    padding: 1.9rem 1.5rem;
+  }
+
+  .summaryFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.sidebarFooter {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: #4e5a77;
+}
+
+.tipsCopy {
+  font-size: 0.92rem;
+  color: #4e5a77;
+}
+
+.tipsList {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+  font-size: 0.9rem;
+}
+
+.tipsList li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #1c274c;
+}
+
+@media (max-width: 1024px) {
+  .bookingLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bookingSidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .bookingSidebar > * {
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bookingPage {
+    padding: 2rem 1.2rem 3rem;
+  }
+
+  .bookingHeader {
+    gap: 0.6rem;
+  }
+
+  .bookingCard {
+    padding: 1.85rem 1.4rem;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formFooter {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .ghostButton,
+  .primaryButton {
+    width: 100%;
+    text-align: center;
+  }
+}

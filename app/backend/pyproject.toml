@@ -1,0 +1,61 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "authlib>=1.6.3",
+    "bcrypt>=4.3.0",
+    "fastapi>=0.116.1",
+    "httpx>=0.28.1",
+    "itsdangerous>=2.2.0",
+    "psycopg2>=2.9.10",
+    "pydantic[email]>=2.11.7",
+    "pydantic-settings>=2.10.1",
+    "sqlalchemy>=2.0.43",
+    "types-authlib>=1.6.2.20250825",
+    "types-psycopg2>=2.9.21.20250809",
+    "uvicorn>=0.35.0",
+    "python-multipart>=0.0.20",
+]
+
+[dependency-groups]
+dev = [
+    "alembic>=1.16.5",
+    "black>=25.1.0",
+    "isort>=6.0.1",
+    "mypy>=1.17.1",
+    "pytest>=8.4.1",
+    "python-lsp-server>=1.13.1",
+    "ruff>=0.12.11",
+]
+
+[tool.black]
+line-length = 120
+exclude = '''
+(
+    alembic/
+|   scripts/
+)
+'''
+
+
+[tool.ruff]
+line-length = 120
+exclude = ["alembic"]
+
+[tool.mypy]
+strict = true
+exclude = [
+    'app/config.py$',
+    '^app/[^/]+/models\.py$',
+]
+
+[[tool.mypy.overrides]]
+module = "app.config"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = 'app.*.models'
+ignore_errors = true
